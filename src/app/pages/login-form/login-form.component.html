@@ -1,0 +1,26 @@
+<body>
+  <app-nav-bar></app-nav-bar>
+  <section>
+    <div class="form-box" data-aos="zoom-in">
+      <div class="form-value">
+        <form action="">
+          <h2>Login here</h2>
+
+          <div class="inputbox">
+
+            <input type="text" required id="name" [(ngModel)]="userName" name="userName">
+            <label>Name</label>
+          </div>
+          <div class="inputbox">
+
+            <input type="password" required id="password" [(ngModel)]="password" name="password">
+            <label>Password</label>
+          </div>
+
+          <button type="button" (click)="onLoginButtonClick()"><span></span>Login</button>
+          <button type="button" (click)="clearFields()">Clear</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>

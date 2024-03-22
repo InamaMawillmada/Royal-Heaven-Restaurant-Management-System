@@ -1,0 +1,30 @@
+<body>
+  <app-nav-bar></app-nav-bar>
+  <section>
+    <div class="form-box" data-aos="zoom-in">
+      <div class="form-value">
+        <form action="">
+          <h2>Register here</h2>
+
+          <div class="inputbox">
+
+            <input type="text" required id="name" [(ngModel)]="userName" name="userName">
+            <label>Name</label>
+          </div>
+          <div class="inputbox">
+
+            <input type="email" required id="email" [(ngModel)]="userEmail" name="userEmail">
+            <label>Email</label>
+          </div>
+          <div class="inputbox">
+            <input type="password" required id="password" [(ngModel)]="userPassword" name="userPassword">
+            <label>Password</label>
+          </div>
+
+          <button type="button" (click)="onRegisterButtonClick()"><span></span>Register</button>
+          <button type="button" (click)="clearFields() "><span></span>Clear</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>

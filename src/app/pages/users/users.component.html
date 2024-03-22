@@ -1,0 +1,43 @@
+<app-user-access-nav-bar></app-user-access-nav-bar>
+
+<div class="section-1">
+
+    <div class="content">
+        <h4>Royal Heaven Restaurant - Users</h4>
+        <h6>You can view all the registered users here</h6>
+    </div>
+
+    <!-- search-bar -->
+    <div class="search">
+
+        <form action="" class="search-bar">
+            <input type="text" placeholder="search user" [(ngModel)]="searchQuery" name="search-query">
+            <button type="submit" (click)="searchUsers()"><span class="material-symbols-outlined">
+                    search
+                </span></button>
+        </form>
+
+    </div>
+    
+    <div class="table">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">User Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of filteredUserList">
+                    <th scope="row">{{user.id}}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,45 @@
+.logo {
+  width: 120px;
+  cursor: pointer;
+}
+body {
+  background-color: #d31145;
+}
+.navbar {
+  width: 85%;
+  height: 70px;
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+}
+
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #ffffff;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.1s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+svg {
+  cursor: pointer;
+}

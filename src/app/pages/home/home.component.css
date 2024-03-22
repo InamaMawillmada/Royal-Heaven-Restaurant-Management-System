@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  color: white;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url("src/assets/images/background/HomePageBgImg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+.content p {
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+button {
+  margin: 20px;
+  margin-top: 50px;
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #d31145;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+
+span {
+  background: #d31145;
+  height: 100%;
+  width: 0;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.1s;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 90px;
+}
+
+.content-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.card-cover {
+  position: relative;
+  overflow: hidden;
+  border: none;
+  border-radius: 10px;
+  background-color: #d31145;
+}
+
+.card-cover h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-cover p {
+  font-size: 1rem;
+}
+
+.card-cover ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.card-cover li {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.card-cover li svg {
+  margin-right: 5px;
+}
+
+.card-cover img {
+  border-radius: 50%;
+  margin-right: 5px;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.container {
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#custom-cards h2,
+#custom-cards h5 {
+  align-items: center;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+.section {
+  background-color: black;
+}
+
+#custom-cards .col {
+  margin-right: 20px;
+}

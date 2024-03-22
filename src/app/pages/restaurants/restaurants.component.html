@@ -1,0 +1,26 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+    <div class="banner">
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Our Restaurants</h4>
+            <h6>Our branched restaurants - You can view our restaurants but you can't edit details here</h6>
+        </div>
+
+        <!-- restaurant-information-card -->
+        <div class="cards">
+            <div class="card" *ngFor="let restaurant of restaurantList" style="width: 18rem; margin: 10px;">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ restaurant.id }} - {{ restaurant.name }}</h5>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Location:</strong> {{ restaurant.location }}</li>
+                        <li class="list-group-item"><strong>Open Hours:</strong> {{ restaurant.openHours }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-footer></app-footer>
+</body>

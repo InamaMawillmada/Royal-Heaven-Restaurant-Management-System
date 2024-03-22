@@ -1,0 +1,131 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+    <div class="banner">
+        <div class="content" data-aos="fade-down">
+            <h4>Royal Heaven Restaurant - Meals</h4>
+            <h6>You can update meal data, remove meals and add new meals here</h6>
+        </div>
+
+        <!-- meal-cards -->
+        <div class="carousel">
+            <h6>Our most highlighted dishes</h6>
+            <div class="row">
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="assets/images/meals/MockMeal1.jpg" alt="Image Description">
+
+                    <h2>Fajita Parchment-Baked Chicken</h2>
+                    <p>This Fajita Parchment Baked Chicken is the perfect way to spice up your weeknight dinners. The
+                        combination of peppers, onions, and chicken creates a symphony of flavors that will leave your
+                        tastebuds very happy!</p>
+                </div>
+
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="assets/images/meals/MockMeal2.jpg" alt="Image Description">
+
+                    <h2>Instant Pot Veggie-Packed Mac 'n' Cheese</h2>
+                    <p>This rich and creamy Instant Pot Vegetable Mac and Cheese is loaded with vegetables and mixed
+                        with three kinds of cheese and milk to create a creamy sauce.</p>
+
+                </div>
+                <div class="col-lg-4">
+                    <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        src="assets/images/meals/MockMeal3.jpg" alt="Image Description">
+
+                    <h2>Korean-style Shrimp Scampi Spaghetti</h2>
+                    <p>Korean condiment brings an untraditional but totally welcome addition to this buttery glossy
+                        spaghetti sauce.</p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-1">
+
+        <h5 class="table-head">Our all meals</h5>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Meal Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Description</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let meal of mealList">
+                    <th scope="row">{{meal.id}}</th>
+                    <td>{{meal.name}}</td>
+                    <td>{{meal.category}}</td>
+                    <td>{{meal.price}}</td>
+                    <td>{{meal.description}}</td>
+
+                    <span class="material-symbols-outlined" (click)="onTableRowClick(meal)">
+                        edit_square
+                    </span>
+
+
+                    <span class="material-symbols-outlined" (click)="deleteMeal(meal.id)">
+                        delete
+                    </span>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-- add-meal-section -->
+        <section class="section-2">
+            <div class="addMeals">
+                <div class="row">
+                    <div class="add-meal-card col-md-6 " data-aos="fade-right" data-aos-offset="300">
+                        <div class="card card-cover h-75 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                            style="background-image: url('assets/images/meals/Add-Meal.jpg'); background-repeat: no-repeat; background-size: cover;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h2 class="pt-1 mt-5 mb-4 display-6 lh-5 fw-bold">Wanna see your own meal in the above
+                                    table? <br>Add Now
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 " data-aos="zoom-in">
+                        <div class="form-box">
+                            <div class="form-value">
+                                <form action="">
+                                    <h2>Add | Update Meals</h2>
+
+                                    <div class="inputbox">
+                                        <input type="text" required id="name" [(ngModel)]="mealName" name="mealName">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="text" required id="category" [(ngModel)]="category"
+                                            name="category">
+                                        <label>Category</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="number" required id="Price" [(ngModel)]="price" name="price">
+                                        <label>Price</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="text" required id="description" [(ngModel)]="description"
+                                            name="description">
+                                        <label>Description</label>
+                                    </div>
+                                    <button type="button" (click)="onAddButtonClick()">Add</button>
+                                    <button type="button" (click)="updateMeal()">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <app-footer></app-footer>
+</body>

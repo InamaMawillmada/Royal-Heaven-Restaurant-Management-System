@@ -1,0 +1,133 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+
+    <div class="banner">
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Ingredients</h4>
+            <h6>You can update ingredient data, remove ingredients and add new ingredients here</h6>
+        </div>
+
+        <!-- ingredient-cards -->
+        <h4>Some nutritious Ingredients we use in our Meals</h4>
+        <div class="cards">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/ingredients/tumeric.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Turmeric — and especially its most active compound, curcumin — has many
+                        scientifically proven health benefits, such as the potential to improve heart health and prevent
+                        Alzheimer's and cancer.
+                    </p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/ingredients/ginger.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Eating ginger can cut down on fermentation, constipation and other causes of
+                        bloating and intestinal gas. Wear and tear on cells. </p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/ingredients/cinemon.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"> It's high in antioxidants, which may help protect against disease,
+                        inflammation and ageing. What's more, it may improve gut health, dental hygiene, reduce
+                        cholesterol levels and lower blood</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-1">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Ingredient Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                    <th scope="col">Nutrition</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ingredient of ingredientList">
+                    <th scope="row">{{ingredient.id}}</th>
+                    <td>{{ingredient.name}}</td>
+                    <td>{{ingredient.category}}</td>
+                    <td>{{ingredient.price}}</td>
+                    <td>{{ingredient.quantity}}</td>
+                    <td>{{ingredient.nutrition}}</td>
+
+                    <span class="material-symbols-outlined" (click)="onTableRowClick(ingredient)">
+                        edit_square
+                    </span>
+
+
+                    <span class="material-symbols-outlined" (click)="deleteIngredient(ingredient.id)">
+                        delete
+                    </span>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- add-ingredient-section -->
+        <section class="section-2">
+            <div class="add-ingredient">
+                <div class="row">
+                    <div class="add-ingredient-card col-md-6 " data-aos="fade-right" data-aos-offset="300">
+                        <div class="card card-cover h-75 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+                            style="background-image: url('assets/images/ingredients/Add-ingredient.jpg'); background-repeat: no-repeat; background-size: cover;">
+                            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                                <h2 class="pt-1 mt-5 mb-4 display-6 lh-5 fw-bold">Did you know that some ingredients
+                                    together can form a new ingredient ? <br>Add your own ingredient here
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 " data-aos="zoom-in">
+                        <div class="form-box">
+                            <div class="form-value">
+                                <form action="">
+                                    <h2>Add | Update Ingredients</h2>
+
+                                    <div class="inputbox">
+
+                                        <input type="text" required id="name" [(ngModel)]="ingredientName"
+                                            name="ingredientName">
+                                        <label>Name</label>
+                                    </div>
+                                    <div class="inputbox">
+
+                                        <input type="text" required id="category" [(ngModel)]="category"
+                                            name="category">
+                                        <label>Category</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="number" required id="price" [(ngModel)]="price" name="price">
+                                        <label>Price</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="number" required id="quantity" [(ngModel)]="quantity"
+                                            name="quantity">
+                                        <label>Quantity</label>
+                                    </div>
+                                    <div class="inputbox">
+                                        <input type="text" required id="nutrition" [(ngModel)]="nutrition"
+                                            name="nutrition">
+                                        <label>Nutrition</label>
+                                    </div>
+                                    <button type="button" (click)="onAddButtonClick()">Add</button>
+                                    <button type="button" (click)="updateIngredient()">Update</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+    <app-footer></app-footer>
+</body>

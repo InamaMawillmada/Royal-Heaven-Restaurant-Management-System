@@ -1,0 +1,112 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+    <div class="banner">
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Recipes</h4>
+            <h6>Our recipes for royal meals</h6>
+        </div>
+
+        <h4>Recipes of Royal Meals</h4>
+
+        <!-- recipe-cards -->
+        <div class="cards">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/recipes/chilling-recipe.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-text">HARD RECIPES
+                    </h3>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/recipes/easy-recipe.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-text">EASY RECIPES
+                    </h3>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/recipes/budget-friendly-recipe.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-text">BUDGET-FRIENDLY RECIPES
+                    </h3>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section-1">
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Recipe Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Cost</th>
+                    <th scope="col">Category</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let recipe of recipeList">
+                    <th scope="row">{{recipe.id}}</th>
+                    <td>{{recipe.name}}</td>
+                    <td>{{recipe.status}}</td>
+                    <td>{{recipe.cost}}</td>
+                    <td>{{recipe.category}}</td>
+
+                    <span class="material-symbols-outlined" (click)="onTableRowClick(recipe)">
+                        edit_square
+                    </span>
+
+
+                    <span class="material-symbols-outlined" (click)="deleteRecipe(recipe.id)">
+                        delete
+                    </span>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-- add-recipe-section -->
+        <section class="section-2">
+
+            <div class="add-recipe">
+                <h2 data-aos="fade-right">Do you have your own recipe ?</h2>
+                <img src="assets/images/recipes/add-recipe.png" alt="" data-aos="zoom-in">
+            </div>
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="">
+                        <h2>Add | Update Recipes</h2>
+
+                        <div class="inputbox">
+
+                            <input type="text" required id="name" [(ngModel)]="recipeName" name="recipeName">
+                            <label>Name</label>
+                        </div>
+                        <div class="inputbox">
+
+                            <input type="text" required id="satus" [(ngModel)]="status" name="status">
+                            <label>Status</label>
+                        </div>
+                        <div class="inputbox">
+                            <input type="text" required id="category" [(ngModel)]="category" name="category">
+                            <label>Category</label>
+                        </div>
+                        <div class="inputbox">
+                            <input type="number" required id="cost" [(ngModel)]="cost" name="cost">
+                            <label>Cost</label>
+                        </div>
+                        <button type="button" (click)="onAddButtonClick()">Add</button>
+                        <button type="button" (click)="updateRecipe()">Update</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <app-footer></app-footer>
+</body>

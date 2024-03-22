@@ -1,0 +1,100 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+
+    <div class="banner">
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Allergens</h4>
+        </div>
+        <!-- Allergen cards -->
+        <div class="container">
+            <div class="cards row mb-1 justify-content-center">
+                <div class="col-md-5">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-1 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0">Asthma</h3>
+                            <div class="mb-1 text-muted">Food Allergy</div>
+                            <p class="card-text mb-auto">Asthma is a chronic lung disease affecting people of all ages.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <div
+                        class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-1 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <h3 class="mb-0">Drug Allergy</h3>
+                            <div class="mb-1 text-muted">Food Allergy</div>
+                            <p class="card-text mb-auto">A drug allergy involves an immune response in the body that
+                                produces an allergic reaction to a medicine.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section-1">
+        <!-- table -->
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Allergen Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Cause</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let allergen of allergenList">
+                    <th scope="row">{{allergen.id}}</th>
+                    <td>{{allergen.name}}</td>
+
+                    <td>{{allergen.cause}}</td>
+
+                    <span class="material-symbols-outlined" (click)="onTableRowClick(allergen)">
+                        edit_square
+                    </span>
+
+                    <span class="material-symbols-outlined" (click)="deleteAllergen(allergen.id)">
+                        delete
+                    </span>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-- Add-allergie section -->
+        <section class="section-2">
+            <div class="add-allergy">
+                <h2 data-aos="fade-right">Have you had an allergy <br> Tell us what you had</h2>
+                <img src="assets/images/allergies/add-allergy.png" alt="" data-aos="zoom-in">
+            </div>
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="">
+                        <h2>Add | Update Allergens</h2>
+
+                        <div class="inputbox">
+
+                            <input type="text" required id="name" [(ngModel)]="allergenName" name="allergenName">
+                            <label>Name</label>
+                        </div>
+                        <div class="inputbox">
+
+                            <input type="text" required id="cause" [(ngModel)]="cause" name="cause">
+                            <label>Cause</label>
+                        </div>
+                        <button type="button" (click)="onAddButtonClick()">Add</button>
+                        <button type="button" (click)="updateAllergen()">Update</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <app-footer></app-footer>
+</body>

@@ -1,0 +1,137 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "Restaurant_Management_System": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/restaurant-management-system",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": ["zone.js"],
+            "tsConfig": "tsconfig.app.json",
+            "assets": [
+              "src/favicon.ico",
+              "src/assets/images/logo.png",
+              "src/assets/images/background/HomePageBgImg.jpg",
+              "src/assets/images/allergies/Allergens.jpg",
+              "src/assets/images/categories/Categories.jpg",
+              "src/assets/images/ingredients/Ingredients.jpg",
+              "src/assets/images/nutrients/Nutritions.jpg",
+              "src/assets/images/ratings/Ratings.jpg",
+              "src/assets/images/recipes/Recipes.jpg",
+              "src/assets/images/Restaurants.png",
+              "src/assets/images/FoodDelivery.jpg",
+              "src/assets/images/RsPortal.jpg",
+              "src/assets/images/RsPortalFeature1.png",
+              "src/assets/images/RsPortalFeature2.jpg",
+              "src/assets/images/meals/MockMeal1.jpg",
+              "src/assets/images/meals/MockMeal2.jpg",
+              "src/assets/images/meals/MockMeal3.jpg",
+              "src/assets/images/categories/category1.jpg",
+              "src/assets/images/categories/category2.jpg",
+              "src/assets/images/categories/category3.jpg",
+              "src/assets/images/ingredients/tumeric.jpg",
+              "src/assets/images/ingredients/ginger.jpg",
+              "src/assets/images/ingredients/cinemon.jpg",
+              "src/assets/images/recipes/easy-recipe.jpg",
+              "src/assets/images/recipes/chilling-recipe.jpg",
+              "src/assets/images/recipes/budget-friendly-recipe.jpg",
+              "src/assets/images/nutrients/lipids.jpg",
+              "src/assets/images/nutrients/protiens.jpg",
+              "src/assets/images/nutrients/vitamins.jpg",
+              "src/assets/images/allergies/asthma.jpg",
+              "src/assets/images/allergies/Drug-Allergy.jpg",
+              "src/assets/images/employees/director.jpg",
+              "src/assets/images/employees/manager.jpg",
+              "src/assets/images/employees/head-chef.jpg",
+              "src/assets/images/meals/Add-Meal.jpg",
+              "src/assets/images/ingredients/Add-ingredient.jpg",
+              "src/assets/images/recipes/add-recipe.png",
+              "src/assets/images/ratings/add-rating.png",
+              "src/assets/images/categories/add-category.png",
+              "src/assets/images/nutrients/add-nutrient.png",
+              "src/assets/images/allergies/add-allergy.png",
+              "src/assets/images/employees/add-employee.png",
+              "src/assets/images/websites/food-network.png",
+              "src/assets/images/websites/allrecipes.jpg",
+              "src/assets/images/websites/eat-right.jpg",
+              "src/assets/images/background/bg-img2.jpg"
+            ],
+            "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css",
+              "node_modules/aos/dist/aos.css"
+            ],
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/aos/dist/aos.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "configurations": {
+            "production": {
+              "browserTarget": "Restaurant_Management_System:build:production"
+            },
+            "development": {
+              "browserTarget": "Restaurant_Management_System:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "Restaurant_Management_System:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "polyfills": ["zone.js", "zone.js/testing"],
+            "tsConfig": "tsconfig.spec.json",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
+            "scripts": []
+          }
+        }
+      }
+    }
+  }
+}

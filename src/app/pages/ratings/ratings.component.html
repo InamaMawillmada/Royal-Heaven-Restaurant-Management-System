@@ -1,0 +1,64 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+    <div class="section-1">
+
+
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Our Ratings</h4>
+            <h6>You can view ratings from our customers to our royal meals :) Don't forget to give your rating too</h6>
+        </div>
+
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Rate Id</th>
+                    <th scope="col">Rater Name</th>
+
+                    <th scope="col">Review</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let rate of rateList">
+                    <th scope="row">{{rate.id}}</th>
+                    <td>{{rate.rater_name}}</td>
+                    <td>{{rate.review}}</td>
+
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- add-rate-section -->
+        <section class="section-2">
+            <div class="add-rate">
+                <h2 data-aos="fade-right">Your rate helps us to develop more!</h2>
+                <img src="assets/images/ratings/add-rating.png" alt="" data-aos="zoom-in">
+            </div>
+
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="">
+                        <h2>Add Ratings</h2>
+
+                        <div class="inputbox">
+
+                            <input type="text" required id="rater_name" [(ngModel)]="raterName" name="raterName">
+                            <label>Rater Name</label>
+                        </div>
+                        <div class="inputbox">
+
+                            <input type="text" required id="review" [(ngModel)]="review" name="review">
+                            <label>Review</label>
+                        </div>
+
+                        <button type="button" (click)="onAddButtonClick()">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+    <app-footer></app-footer>
+
+</body>

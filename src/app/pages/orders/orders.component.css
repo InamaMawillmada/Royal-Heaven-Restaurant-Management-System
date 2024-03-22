@@ -1,0 +1,56 @@
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url("src/assets/images/background/HomePageBgImg.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-attachment: fixed;
+    background-repeat: repeat;
+  }
+  
+  .content {
+    margin-top: 100px;
+    width: 100%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+  }
+  .table {
+    left: 10%;
+  }
+  .table,
+  th,
+  td {
+    width: 80%;
+    margin: auto;
+    border: 1px solid white;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 15px;
+    table-layout: fixed;
+    background: black;
+    opacity: 0.5;
+    color: white;
+  }
+  th,
+  td {
+    padding: 20px;
+    opacity: 0.9;
+  }
+  tr{
+    cursor: pointer;
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+  }
+  
+  

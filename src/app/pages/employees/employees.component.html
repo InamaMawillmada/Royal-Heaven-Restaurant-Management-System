@@ -1,0 +1,110 @@
+<app-user-access-nav-bar></app-user-access-nav-bar>
+
+
+<div class="banner">
+    <div class="content">
+        <h4>Royal Heaven Restaurant - Employees</h4>
+        <h6>You can update employee data, remove employees and add new employees here</h6>
+    </div>
+
+    <!-- employee-heads -->
+    <div class="carousel">
+
+        <div class="row">
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="assets/images/employees/director.jpg" alt="Image Description">
+                <h2>Restaurant Director ( Founder )</h2>
+                <p>Ms. Guen Sin</p>
+
+            </div>
+
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="assets/images/employees/manager.jpg" alt="Image Description">
+
+                <h2>Restaurant Manager</h2>
+
+                <p>Mrs. Helan Gomiran</p>
+            </div>
+            <div class="col-lg-4">
+                <img class="bd-placeholder-img rounded-circle" width="140" height="140"
+                    src="assets/images/employees/head-chef.jpg" alt="Image Description">
+
+                <h2>Head Chef</h2>
+
+                <p>Ms. John Watson</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section-1">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Employee Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Position</th>
+                <th scope="col">Description</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeList">
+                <th scope="row">{{employee.id}}</th>
+                <td>{{employee.name}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.position}}</td>
+                <td>{{employee.description}}</td>
+                <span class="material-symbols-outlined" (click)="onTableRowClick(employee)">
+                    edit_square
+                </span>
+
+
+                <span class="material-symbols-outlined" (click)="deleteEmployee(employee.id)">
+                    delete
+                </span>
+            </tr>
+
+        </tbody>
+    </table>
+
+    <!-- add-employee -->
+    <section class="section-2">
+        <div class="add-employee">
+            <h2 data-aos="fade-right">Add your name here <br>if you are a staff member</h2>
+            <img src="assets/images/employees/add-employee.png" alt="" data-aos="zoom-in">
+        </div>
+        <div class="form-box">
+            <div class="form-value">
+                <form action="">
+                    <h2>Add | Update Employee</h2>
+
+                    <div class="inputbox">
+
+                        <input type="text" required id="name" [(ngModel)]="employeeName" name="employeeName">
+                        <label>Name</label>
+                    </div>
+                    <div class="inputbox">
+
+                        <input type="email" required id="email" [(ngModel)]="email" name="email">
+                        <label>Email</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" required id="position" [(ngModel)]="position" name="position">
+                        <label>Position</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" required id="description" [(ngModel)]="description" name="description">
+                        <label>Description</label>
+                    </div>
+                    <button type="button" (click)="onAddButtonClick()">Add</button>
+                    <button type="button" (click)="updateEmployee()">Update</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<app-footer></app-footer>

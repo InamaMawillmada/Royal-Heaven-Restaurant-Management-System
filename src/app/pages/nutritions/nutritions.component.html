@@ -1,0 +1,105 @@
+<body>
+    <app-user-access-nav-bar></app-user-access-nav-bar>
+    <div class="banner">
+
+        <div class="content">
+            <h4>Royal Heaven Restaurant - Nutrients</h4>
+            <h6>As a meal management system we consider the need of nutrients as well as food</h6>
+        </div>
+
+        <h4>Some nutrients found in our meals mostly</h4>
+
+        <!-- nutrition-cards -->
+        <div class="cards">
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/nutrients/vitamins.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Vitamins & Minerals
+                    </p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/nutrients/protiens.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Protiens </p>
+                </div>
+            </div>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/nutrients/lipids.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text"> Lipids</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- table & add nutrition section -->
+    <div class="section-1">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Nutrition Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Benefit</th>
+                    <th scope="col">Nutrition Type</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let nutrition of nutritionList">
+                    <th scope="row">{{nutrition.id}}</th>
+                    <td>{{nutrition.name}}</td>
+
+                    <td>{{nutrition.benefit}}</td>
+                    <td>{{nutrition.type}}</td>
+
+                    <span class="material-symbols-outlined" (click)="onTableRowClick(nutrition)">
+                        edit_square
+                    </span>
+
+                    <span class="material-symbols-outlined" (click)="deleteNutrition(nutrition.id)">
+                        delete
+                    </span>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <!-- add-nutrient-section -->
+        <section class="section-2">
+            <div class="add-nutrient">
+                <h2 data-aos="fade-right">Nutrients are essential for our body <br>Add the nutrients you know here</h2>
+                <img src="assets/images/nutrients/add-nutrient.png" alt="" data-aos="zoom-in">
+            </div>
+            <div class="form-box">
+                <div class="form-value">
+                    <form action="">
+                        <h2>Add | Update Nutritions</h2>
+
+                        <div class="inputbox">
+
+                            <input type="text" required id="name" [(ngModel)]="nutritionName" name="nutritionName">
+                            <label>Name</label>
+                        </div>
+                        <div class="inputbox">
+
+                            <input type="text" required id="benefit" [(ngModel)]="benefit" name="benefit">
+                            <label>Benefit</label>
+                        </div>
+                        <div class="inputbox">
+
+                            <input type="text" required id="type" [(ngModel)]="type" name="type">
+                            <label>Type</label>
+                        </div>
+                        <button type="button" (click)="onAddButtonClick()">Add</button>
+                        <button type="button" (click)="updateNutrition()">Update</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <app-footer></app-footer>
+</body>

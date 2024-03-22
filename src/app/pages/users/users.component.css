@@ -1,0 +1,74 @@
+.section-1 {
+  background-color: black;
+}
+
+.content {
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+  color: white;
+}
+
+.table {
+  width: 80%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 15px;
+  table-layout: fixed;
+  background: black;
+  opacity: 0.5;
+  color: white;
+}
+
+th,
+td {
+  padding: 20px;
+  opacity: 0.9;
+}
+
+.search-bar {
+  
+  margin-top: 50px;
+  margin-left: 670px;
+  transform: translate(-50%, -50%);
+  height: 60px;
+  width: 400px;
+  background: rgb(68, 68, 68);
+  display: flex;
+  align-items: center;
+  border-radius: 60px;
+  padding: 10px 20px;
+  backdrop-filter: blur(4px) saturate(180%);
+}
+.search-bar input {
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}
+::placeholder {
+  color: white;
+}
+.search-bar button span {
+  width: 25px;
+}
+.search-bar button {
+  border: 0;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background: rgb(165, 165, 165);
+  cursor: pointer;
+}
